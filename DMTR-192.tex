@@ -3,16 +3,23 @@
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
 \usepackage{arydshln}
+\usepackage{attachfile}
+\usepackage{array}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \input meta.tex
 
+\newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+\setcounter{tocdepth}{4}
+
 \begin{document}
 
-\def\milestoneName{Science Pipelines Fall 2019 Release}
-\def\milestoneId{LDM-503-11b}
+\def\milestoneName{LDM-503-11b Science Pipelines Fall 2019 Release}
+\def\milestoneId{LVV-P62}
 \def\product{Science Pipelines SW}
 
 \setDocCompact{true}
@@ -20,14 +27,14 @@
 \title{LDM-503-11b: Science Pipelines Fall 2019 Release Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
 \date{\vcsdate}
-\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
 \author{ John Swinbank }
 
-\input history_and_info.tex
+\input{history_and_info.tex}
 
 
 \setDocAbstract{
-This is the test plan and report for LDM-503-11b (Science Pipelines Fall 2019 Release), an LSST level 2 milestone pertaining to the Data Management Subsystem.
+This is the test plan and report for LVV-P62 (LDM-503-11b Science Pipelines Fall 2019 Release),
+an LSST milestone pertaining to the Data Management Subsystem.
 }
 
 
@@ -40,7 +47,7 @@ This is the test plan and report for LDM-503-11b (Science Pipelines Fall 2019 Re
 \subsection{Objectives}
 \label{sect:objectives}
 
-This test plan checks for the successful release of the Fall 2019
+ This test plan checks for the successful release of the Fall 2019
 release of the LSST Science Pipelines (Pipelines release version
 19.0.0).\\[2\baselineskip]It will demonstrate that:\\[2\baselineskip]
 
@@ -83,7 +90,7 @@ Pipelines.
 \subsection{System Overview}
 \label{sect:systemoverview}
 
-The LSST Science Pipelines comprise the scientific algorithms that will
+ The LSST Science Pipelines comprise the scientific algorithms that will
 be used to process LSST data, arranged into executable pipelines by
 means of the LSST ``task'' framework. They also include execution
 middleware that is common across execution environments (for example,
@@ -103,28 +110,34 @@ specific instrumentation.\\[2\baselineskip]
 \subsection{Document Overview}
 \label{sect:docoverview}
 
-This document was generated from Jira, obtaining the relevant information from the 
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testPlan/LVV-P62}{LVV-P62}
+This document was generated from Jira, obtaining the relevant information from the
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62}
 ~Jira Test Plan and related Test Cycles (
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C113}{LVV-C113}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C113}{LVV-C113}
 ).
 
-Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}), the applicable documentation, and explains how this document is organized.
-Section \ref{sect:configuration}  describes the configuration used for this test.
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
+the applicable documentation, and explains how this document is organized.
+Section \ref{sect:testplan} provides additional information about the test plan, like for example the configuration
+used for this test or related documentation.
 Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
-%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases, including all relevant information that fully describes the test campaign.
 
-Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
+an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan LVV-P62 in Jira is \textbf{ Draft }.
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62} in Jira is \textbf{ Draft }.
 
 \subsection{References}
 \label{sect:references}
 \renewcommand{\refname}{}
-\bibliography{lsst,refs,books,refs_ads}
-\section{Test Configuration}
-\label{sect:configuration}
+\bibliography{lsst,refs,books,refs_ads,local}
+
+
+\newpage
+\section{Test Plan Details}
+\label{sect:testplan}
+
 
 \subsection{Data Collection}
 
@@ -149,62 +162,119 @@ prerequisites of the LSST Science Pipelines.\\[2\baselineskip]
 
 
 
+\subsection{Related Documentation}
+
+The documentation related to this test campaign should be provided in the following DocuShare Collection
+(as per Verification Artifacts in Jira test plan LVV-P62).
+
+\begin{itemize}
+\item DocuShare Collection Not Specified
+\end{itemize}
+
+
+
+\subsection{PMCS Activity}
+
+Primavera milestones related to the test campaign.
+
+\begin{itemize}
+\item None
+\end{itemize}
+
 
 \newpage
 \section{Personnel}
 \label{sect:personnel}
 
-The following personnel are involved in this test activity:
+The personnel involved in the test campaign is shown in the following table.
 
-\begin{itemize}
-\item Test Plan (LVV-P62) owner: John Swinbank
-\item Test Cycles:
-\begin{itemize}
-  \item LVV-C113 owner: 
-    John Swinbank
-  \begin{itemize}
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362} tester: 
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601} tester: 
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363} tester: 
-  \end{itemize}
-\end{itemize}
-\item Additional Test Personnel involved:
-  \begin{itemize}
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362}: 
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363}: 
-    \item Test case \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601}: 
-  \end{itemize}
-\end{itemize}
+{\small
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62} owner:} &
+\multicolumn{2}{l}{\textbf{ John Swinbank } }\\\hline
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C113}{LVV-C113} owner:} &
+\multicolumn{2}{l}{\textbf{
+John Swinbank }
+} \\\hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362}
+& {\small John Swinbank } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601}
+& {\small John Swinbank } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363}
+& {\small John Swinbank } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small  }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
+}
 
 \newpage
 
-\section{Overview of the Test Results}
+\section{Test Campaign Overview}
 \label{sect:overview}
 
 \subsection{Summary}
 \label{sect:summarytable}
 
-\begin{longtable}{p{0.12\textwidth}p{0.2\textwidth}p{0.56\textwidth}p{0.12\textwidth}}
+{\small
+\begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
 \toprule
+\multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-11b Science Pipelines Fall 2019 Release }} & Draft \\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C113}{LVV-C113}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-11b: Science Pipelines Fall 2019 Release }} & Not Executed \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
 
-  \multicolumn{3}{c}{ Test Cycle {\bf LVV-C113: LDM-503-11b: Science Pipelines Fall 2019 Release
- }} \\\hline
+\medskip
+\end{minipage}
+&
+\\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
 
-  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
+\medskip
+\end{minipage}
+&
+\\\hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363}
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
 
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362}
-    & Not Executed &  &
-    \\\hline
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601}
-    & Not Executed &  &
-    \\\hline
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363}
-    & Not Executed &  &
-    \\\hline
-
-\caption{Test Results Summary}
+\medskip
+\end{minipage}
+&
+\\\hline
+\caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
+}
 
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
@@ -220,23 +290,19 @@ Not yet available.
 \section{Detailed Test Results}
 \label{sect:detailedtestresults}
 
+\subsection{Test Cycle LVV-C113 }
 
-  \subsection{Test Cycle LVV-C113 }
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C113}{LDM-503-11b: Science Pipelines Fall 2019 Release}} in Jira.
 
-Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C113}{LDM-503-11b: Science Pipelines Fall 2019 Release
-}} in Jira.
+Test Cycle name: LDM-503-11b: Science Pipelines Fall 2019 Release\\
+Status: Not Executed
 
-  LDM-503-11b: Science Pipelines Fall 2019 Release
-\\
-  Status: Not Executed
-
-  This test cycle describes tests performed on the Science Pipelines Fall
+This test cycle describes tests performed on the Science Pipelines Fall
 2019 (v19.0.0) release, ensuring that the release is properly
 identified, documented, distributed, installable and tested.
 
-
-  \subsubsection{Software Version/Baseline}
-    A web browser is required for inspecting release artifacts published to
+\subsubsection{Software Version/Baseline}
+A web browser is required for inspecting release artifacts published to
 the web.\\[2\baselineskip]Testing the software installation procedures,
 and demonstrating that the release's integration tests can be executed
 successfully, require a supported operating system with the documented
@@ -252,22 +318,19 @@ software release will involve a reorganization of documentation
 describing prerequisites; in this case, the documentation corresponding
 to the new release must be consulted.
 
-
-  \subsubsection{Configuration}
-    No specific configuration is required beyond the availability of test
+\subsubsection{Configuration}
+No specific configuration is required beyond the availability of test
 systems with the prerequisite software, described above, installed.
 
+\subsubsection{Test Cases in LVV-C113 Test Cycle}
 
-  \subsubsection{Test Cases in LVV-C113 Test Cycle}
+\paragraph{ LVV-T362 - Installation of the LSST Science Pipelines Payloads }\mbox{}\\
 
-
-    \paragraph{Test Case LVV-T362 - Installation of the LSST Science Pipelines Payloads
- }\mbox{}\\
-
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{\textit{ LVV-T362 } }
 test case in Jira.
 
-    This test will check that:
+This test will check that:
 
 \begin{itemize}
 \tightlist
@@ -292,210 +355,187 @@ Note that this test assumes a 2018-era packaging of the Science
 Pipelines software, in which all the above payloads are represented by a
 single ``meta-package'', lsst\_distrib.
 
-
-    \textbf{ Preconditions}:\\
-    
-
-    Execution status: {\bf Not Executed }
-
-    Final comment:\\
+\textbf{ Preconditions}:\\
 
 
-    Detailed step results:
+Execution status: {\bf Not Executed }
 
-    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
-    \hline
-    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
-      1 & Description &
+Final comment:\\
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The LSST Science Pipelines, described by the lsst\_distrib meta-package,
+
+Detailed steps results:
+
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+The LSST Science Pipelines, described by the lsst\_distrib meta-package,
 should be installed following the documentation available at
 https://pipelines.lsst.io/. The suggested Conda environment will be used
 to ensure that a supported execution environment is available.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Detailed output will depend on the installation method chosen, but will
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Detailed output will depend on the installation method chosen, but will
 confirm the successful installation of the Science Pipelines.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      2 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The lsst\_distrib top-level metapackage will be enabled. Assuming that
+2 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+The lsst\_distrib top-level metapackage will be enabled. Assuming that
 the software has been installed at
 \$\{LSST\_DIR\}:\\[2\baselineskip]\hspace*{0.333em} ~ ~ ~source
 \$\{LSST\_DIR\}/loadLSST.bash\\
 \hspace*{0.333em} ~ ~ ~setup lsst\_distrib
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Nothing is printed. The command\\[2\baselineskip]\hspace*{0.333em} ~eups
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Nothing is printed. The command\\[2\baselineskip]\hspace*{0.333em} ~eups
 list -s lsst\_distrib\\[2\baselineskip]may be used to confirm that the
 correct version of the codebase has been installed.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      3 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The ``LSST Stack Demo'' package will be downloaded onto the test system
+3 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+The ``LSST Stack Demo'' package will be downloaded onto the test system
 from https://github.com/lsst/lsst\_dm\_stack\_demo/releases. The version
 corresponding to to the version of the Science Pipelines under test
 should be chosen.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Depends on the tool selected by the user for downloading.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Depends on the tool selected by the user for downloading.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
+4 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+The stack demo package is uncompressed into a directory \$\{DEMO\_DIR\}.
 
-      4 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The stack demo package is uncompressed into a directory \$\{DEMO\_DIR\}.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Depends on options given to the tar command. Should confirm the
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Depends on options given to the tar command. Should confirm the
 availability of the stack demo source.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      5 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The demo package will be executed by following the instructions in its
+5 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+The demo package will be executed by following the instructions in its
 README file.~
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+Successful execution will result in the string ``Ok'' being returned.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Successful execution will result in the string ``Ok'' being returned.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
+\end{longtable}
 
-    \end{longtable}
+\paragraph{ LVV-T1601 - Science Pipelines available on developer hardware }\mbox{}\\
 
-
-    \paragraph{Test Case LVV-T1601 - Science Pipelines available on developer hardware
- }\mbox{}\\
-
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{\textit{ LVV-T1601 } }
 test case in Jira.
 
-    This test will check that a given release of the LSST Science Pipelines
+This test will check that a given release of the LSST Science Pipelines
 is available for use in a ``shared stack'' on developer infrastructure.
 
-
-    \textbf{ Preconditions}:\\
-    
-
-    Execution status: {\bf Not Executed }
-
-    Final comment:\\
+\textbf{ Preconditions}:\\
 
 
-    Detailed step results:
+Execution status: {\bf Not Executed }
 
-    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
-    \hline
-    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
-      1 & Description &
+Final comment:\\
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Consult the LSST Developer Guide (http://developer.lsst.io/) to
+
+Detailed steps results:
+
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Consult the LSST Developer Guide (http://developer.lsst.io/) to
 establish:\\[2\baselineskip]
 
 \begin{itemize}
@@ -508,131 +548,127 @@ establish:\\[2\baselineskip]
   infrastructure.
 \end{itemize}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The Developer Guide clearly presents information about connecting to and
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The Developer Guide clearly presents information about connecting to and
 using shared infrastructure.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      2 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Connect to the shared infrastructure following the Developer Guide
+2 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Connect to the shared infrastructure following the Developer Guide
 instructions.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+A shell prompt on a shared machine.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      A shell prompt on a shared machine.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
-
-      3 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Initialize the LSST environment following the Developer Guide
+3 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Initialize the LSST environment following the Developer Guide
 instructions.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
+ & Example Code \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+source /software/lsstsw/stack/loadLSST.bash
 
-      & Expected Result &
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      No errors are shown.
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+No errors are shown.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      4 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      List available software products using EUPS, and check that the release
+4 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+List available software products using EUPS, and check that the release
 under test is available.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
+ & Example Code \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+eups list lsst\_distrib \textbar{} grep vXX\_XX\_XX ~\# replace
+XX\_XX\_XX with the version number of the release under test
 
-      & Expected Result &
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The provided version number should be available in the shared stack.
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The provided version number should be available in the shared stack.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      & Status          & Not Executed \\ \hline
+ & Status: \textbf{ Not Executed } \\ \hline
 
-    \end{longtable}
+\end{longtable}
 
+\paragraph{ LVV-T363 - Science Pipelines Release Documentation }\mbox{}\\
 
-    \paragraph{Test Case LVV-T363 - Science Pipelines Release Documentation
- }\mbox{}\\
-
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{\textit{ LVV-T363 } }
 test case in Jira.
 
-    This test will check:
+This test will check:
 
 \begin{itemize}
 \tightlist
@@ -644,53 +680,48 @@ test case in Jira.
   characterization report which describes its scientific performance.
 \end{itemize}
 
-
-    \textbf{ Preconditions}:\\
-    
-
-    Execution status: {\bf Not Executed }
-
-    Final comment:\\
+\textbf{ Preconditions}:\\
 
 
-    Detailed step results:
+Execution status: {\bf Not Executed }
 
-    \begin{longtable}{p{1cm}p{2cm}p{13cm}}
-    \hline
-    {Step} & \multicolumn{2}{c}{Description, Results and Status}\\ \hline
-      1 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Load the Science Pipelines website at https://pipelines.lsst.io/.
-
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+Final comment:\\
 
 
-      & Expected Result &
+Detailed steps results:
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The website is displayed.
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Load the Science Pipelines website at https://pipelines.lsst.io/.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
-
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Status          & Not Executed \\ \hline
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The website is displayed.
 
-      2 & Description &
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Identify documentation for the release under test. This should be
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Status: \textbf{ Not Executed } \\ \hline
+
+2 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Identify documentation for the release under test. This should be
 clearly labelled on the documentation site.\\[2\baselineskip]If the
 latest release is being tested, the default page loaded when visiting
 https://pipelines.lsst.io/ should be the documentation
@@ -699,34 +730,30 @@ should present clear instructions for changing the edition (or version)
 of the documentation being examined, and documentation for the release
 under test should be available.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The documentation for the release under test is displayed.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The documentation for the release under test is displayed.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
-
-      3 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Inspect the documentation to ensure that it refers to the release under
+3 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Inspect the documentation to ensure that it refers to the release under
 test, and that it provides:
 
 \begin{itemize}
@@ -741,94 +768,82 @@ test, and that it provides:
   Getting started information.
 \end{itemize}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The user is satisfied that the required information is available.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The user is satisfied that the required information is available.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
-
-      4 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Locate the Characterization Metric Report corresponding to this release.
+4 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Locate the Characterization Metric Report corresponding to this release.
 It should be linked from the main release documentation.
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The user is satisfied that the report is available.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The user is satisfied that the report is available.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
-
-      5 & Description &
-
-      \begin{minipage}[t]{13cm}{\footnotesize
-      Verify that the characterization metric report describes the scientific
+5 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+Verify that the characterization metric report describes the scientific
 performance of the release in terms of metrics referring to high-level
 requirements documentation (the Science Requirements Document, LPM-17;
 the LSST System Requirements, LSE-29; and/or the Observatory System
 Specifications, LSE-30).
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
 
 
-      & Expected Result &
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+The user is satisfied with the contents of the report.
 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      The user is satisfied with the contents of the report.
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
 
-      & \begin{minipage}[t]{2cm}{Actual\\ Result}\end{minipage}   & 
-      \begin{minipage}[t]{13cm}{\footnotesize
-      
-      \vspace{\dp0}
-      } \end{minipage} \\
-      \\ \cdashline{2-3}
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
 
+ & Status: \textbf{ Not Executed } \\ \hline
 
-      & Status          & Not Executed \\ \hline
-
-    \end{longtable}
+\end{longtable}
 
 
 \input{appendix.tex}
