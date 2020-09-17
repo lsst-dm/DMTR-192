@@ -1,6 +1,6 @@
 % generated from JIRA project LVV
 % using template at /usr/local/lib/python3.7/site-packages/docsteady/templates/dm-tpr.latex.jinja2.
-% using docsteady version 1.2rc22
+% using docsteady version 1.2rc24
 % Please do not edit -- update information in Jira instead
 
 \documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
@@ -38,7 +38,8 @@
 
 
 \setDocAbstract{
-This is the test plan and report for LDM-503-11b (Science Pipelines Fall 2019 Release),
+This is the test plan and report for
+\textbf{ Science Pipelines Fall 2019 Release} (LDM-503-11b),
 an LSST milestone pertaining to the Data Management Subsystem.
 }
 
@@ -131,7 +132,7 @@ Section \ref{sect:overview} provides a summary of the test results, including an
 an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62} in Jira is \textbf{ Draft }.
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62} in Jira is \textbf{ Completed }.
 
 \subsection{References}
 \label{sect:references}
@@ -169,21 +170,15 @@ prerequisites of the LSST Science Pipelines.\\[2\baselineskip]
 
 \subsection{Related Documentation}
 
-The documentation related to this test campaign should be provided in the following DocuShare Collection
-(as per Verification Artifacts in Jira test plan LVV-P62).
 
-\begin{itemize}
-\item DocuShare Collection Not Specified
-\end{itemize}
-
+No additional documentation provided.
 
 
 \subsection{PMCS Activity}
 
-Primavera milestones related to the test campaign.
-
+Primavera milestones related to the test campaign:
 \begin{itemize}
-\item None
+\item LDM-503-11b
 \end{itemize}
 
 
@@ -204,7 +199,7 @@ John Swinbank }
 } \\\hline
 \textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362}
-& {\small John Swinbank } & {\small  } &
+& {\small John Swinbank } & {\small John Swinbank } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -212,7 +207,7 @@ John Swinbank }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601}
-& {\small John Swinbank } & {\small  } &
+& {\small John Swinbank } & {\small John Swinbank } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -220,7 +215,7 @@ John Swinbank }
 \end{minipage}
 \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363}
-& {\small John Swinbank } & {\small  } &
+& {\small John Swinbank } & {\small John Swinbank } &
 \begin{minipage}[]{6cm}
 \smallskip
 {\small  }
@@ -242,40 +237,38 @@ John Swinbank }
 \begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
 \toprule
 \multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P62}{LVV-P62}:} &
-\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-11b: Science Pipelines Fall 2019 Release }} & Draft \\\hline
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-11b: Science Pipelines Fall 2019 Release }} & Completed \\\hline
 \multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C113}{LVV-C113}:} &
-\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-11b: Science Pipelines Fall 2019 Release }} & Not Executed \\\hline
+\multicolumn{2}{p{10.9cm}}{\textbf{ LDM-503-11b: Science Pipelines Fall 2019 Release }} & Done \\\hline
 \textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T362}{LVV-T362}
 &  1
-& Not Executed &
+& Pass w/ Deviation &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test completed with deviation; see linked issue.
 \medskip
 \end{minipage}
-&
+&   \href{https://jira.lsstcorp.org/browse/DM-26471}{DM-26471}
 \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1601}{LVV-T1601}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test completed successfully.
 \medskip
 \end{minipage}
-&
-\\\hline
+&   \\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T363}{LVV-T363}
 &  1
-& Not Executed &
+& Pass &
 \begin{minipage}[]{9cm}
 \smallskip
-
+Test completed successfully.
 \medskip
 \end{minipage}
-&
-\\\hline
+&   \\\hline
 \caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
@@ -284,12 +277,22 @@ John Swinbank }
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
-Not yet available.
+The bulk of the tests described in this plan were completed
+successfully, with almost no problems encountered.\\[2\baselineskip]The
+one issue seen was in the documentation in the lsst\_dm\_stack\_demo
+package not properly matching the on-disk files: documentation refers to
+a bin/compare.py file which is executed using Python, whereas in fact
+the package provides a bin/compare file which must be executed using
+bash.\\[2\baselineskip]Note, however, that this package is obsolete and
+will be removed from future releases (issue DM-22578). This is therefore
+a minor issue. Nevertheless, issue DM-26471 has been filed to resolve
+this problem.
 
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-Not yet available.
+The lsst\_dm\_stack\_demo documentation its documentation should be
+updated to reflect the available functionality.
 
 \newpage
 \section{Detailed Test Results}
@@ -300,7 +303,7 @@ Not yet available.
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C113}{LDM-503-11b: Science Pipelines Fall 2019 Release}} in Jira.
 
 Test Cycle name: LDM-503-11b: Science Pipelines Fall 2019 Release\\
-Status: Not Executed
+Status: Done
 
 This test cycle describes tests performed on the Science Pipelines Fall
 2019 (v19.0.0) release, ensuring that the release is properly
@@ -313,15 +316,15 @@ and demonstrating that the release's integration tests can be executed
 successfully, require a supported operating system with the documented
 prerequisites of the release installed. This will be carried out on the
 ''lsst-dev'' shared developer systems at the LSST Data
-Facility.\\[2\baselineskip]At time of writing, Data Facilitysystems run
+Facility.\\[2\baselineskip]At time of writing, Data Facility systems run
 CentOS Linux release 7.6.1810, and it is anticipated that this will be a
 supported platform for the Science Pipelines
-release.\\[2\baselineskip]Science Pipelines prerequisites are currently
-documented at https://pipelines.lsst.io/install/prereqs/centos.html and
-all of these must be installed.\\[2\baselineskip]It is possible that the
-software release will involve a reorganization of documentation
-describing prerequisites; in this case, the documentation corresponding
-to the new release must be consulted.
+release.\\[2\baselineskip]Science Pipelines prerequisites are documented
+at \href{https://pipelines.lsst.io/}{pipelines.lsst.io}; all of these
+must be installed.\\[2\baselineskip]It is possible that the software
+release will involve a reorganization of documentation describing
+prerequisites; in this case, the documentation corresponding to the new
+release must be consulted.
 
 \subsubsection{Configuration}
 No specific configuration is required beyond the availability of test
@@ -363,10 +366,16 @@ single ``meta-package'', lsst\_distrib.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass w/ Deviation }
 
-Final comment:\\
+Final comment:\\Test completed with deviation; see linked issue.
 
+Issues found during the execution of LVV-T362 test case:
+
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/DM-26471}{DM-26471}~~README for lsst\_dm\_stack\_demo is incorrect
+
+\end{itemize}
 
 Detailed steps results:
 
@@ -396,11 +405,17 @@ confirm the successful installation of the Science Pipelines.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+The Science Pipelines were installed using the Docker image
+7-stack-lsst\_distrib-v19\_0\_0, using the procedure described at
+https://pipelines.lsst.io/install/docker.html\#quick-start. The command
+executed was:\\[2\baselineskip]docker run -ti
+docker.io/lsstsqre/centos:7-stack-lsst\_distrib-v19\_0\_0\\[2\baselineskip]After
+a few moments, a shel inside the Docker container was available.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -427,11 +442,18 @@ correct version of the codebase has been installed.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+{[}lsst@cdc991ebdb1d stack{]}\$ source
+/opt/lsst/software/stack/loadLSST.bash\\
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d stack{]}\$ setup
+lsst\_distrib\\
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d stack{]}\$ eups list -s
+lsst\_distrib\\
+19.0.0+2 current v19\_0\_0 setup
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -455,11 +477,35 @@ Depends on the tool selected by the user for downloading.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d \textasciitilde{}{]}\$ wget
+https://github.com/lsst/lsst\_dm\_stack\_demo/archive/19.0.0.tar.gz\\
+--2020-08-25 21:40:27--
+https://github.com/lsst/lsst\_dm\_stack\_demo/archive/19.0.0.tar.gz\\
+Resolving github.com (github.com)\ldots{} 192.30.255.112\\
+Connecting to github.com
+(github.com)\textbar{}192.30.255.112\textbar{}:443\ldots{} connected.\\
+HTTP request sent, awaiting response\ldots{} 302 Found\\
+Location:
+https://codeload.github.com/lsst/lsst\_dm\_stack\_demo/tar.gz/19.0.0
+{[}following{]}\\
+--2020-08-25 21:40:27--
+https://codeload.github.com/lsst/lsst\_dm\_stack\_demo/tar.gz/19.0.0\\
+Resolving codeload.github.com (codeload.github.com)\ldots{}
+192.30.255.121\\
+Connecting to codeload.github.com
+(codeload.github.com)\textbar{}192.30.255.121\textbar{}:443\ldots{}
+connected.\\
+HTTP request sent, awaiting response\ldots{} 200 OK\\
+Length: unspecified {[}application/x-gzip{]}\\
+Saving to: `19.0.0.tar.gz'\\[2\baselineskip]{[}
+\textless{}=\textgreater{} {]} 34,556,522 6.23MB/s in
+6.5s\\[2\baselineskip]2020-08-25 21:40:34 (5.07 MB/s) - `19.0.0.tar.gz'
+saved {[}34556522{]}\\[2\baselineskip]\hspace*{0.333em}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 4 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -481,11 +527,14 @@ availability of the stack demo source.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d \textasciitilde{}{]}\$ tar
+zxf 19.0.0.tar.gz\\
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d \textasciitilde{}{]}\$
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 5 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -507,11 +556,30 @@ Successful execution will result in the string ``Ok'' being returned.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d
+lsst\_dm\_stack\_demo-19.0.0{]}\$ setup -r .\\
+(lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d
+lsst\_dm\_stack\_demo-19.0.0{]}\$ ./bin/demo.sh\\[2\baselineskip](many
+lines of output, elided for
+clarity)\\[2\baselineskip]processCcd.calibrate.photoCal INFO: Magnitude
+zero point: 26.068660 +/- 0.001258 from 63 stars\\
+processCcd.calibrate INFO: Photometric zero-point: 26.068660\\
+Loading exposure registry from
+/home/lsst/lsst\_dm\_stack\_demo-19.0.0/input/registry.sqlite3\\[2\baselineskip]Processing
+completed successfully. The results are in
+detected-sources.txt.\\[2\baselineskip](lsst-scipipe-4d7b902)
+{[}lsst@cdc991ebdb1d lsst\_dm\_stack\_demo-19.0.0{]}\$ python
+bin/compare.py detected-sources.txt\\
+python: can't open file `bin/compare.py': {[}Errno 2{]} No such file or
+directory\\[2\baselineskip](lsst-scipipe-4d7b902) {[}lsst@cdc991ebdb1d
+lsst\_dm\_stack\_demo-19.0.0{]}\$ ./bin/compare detected-sources.txt\\
+Ok.\\[2\baselineskip]Note that the documented bin/compare.py command was
+NOT functional, but an obvious equivalent was available.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass w/ Deviation } \\ \hline
 
 \end{longtable}
 
@@ -527,9 +595,9 @@ is available for use in a ``shared stack'' on developer infrastructure.
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Test completed successfully.
 
 
 Detailed steps results:
@@ -568,11 +636,21 @@ using shared infrastructure.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+\begin{itemize}
+\tightlist
+\item
+  Instructions for connecting to shared hardware are available at
+  https://developer.lsst.io/services/lsst-login.html
+\item
+  Instructions for initializing the shared stack, along with a range of
+  other software, are available at
+  https://developer.lsst.io/services/software.html
+\end{itemize}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -594,11 +672,12 @@ A shell prompt on a shared machine.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Login successful. A prompt is available.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -626,11 +705,15 @@ No errors are shown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+The shared stack for the 19.0.0 release is available in
+/software/lsstsw/stack\_20191101. The command executed
+was:\\[2\baselineskip]source
+software/lsstsw/stack\_20191101/loadLSST.bash
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 4 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -659,11 +742,14 @@ The provided version number should be available in the shared stack.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+{[}swinbank@lsst-login01 \textasciitilde{}{]}\$ eups list lsst\_distrib
+\textbar{} grep 19\_0\_0\\
+19.0.0+2 current v19\_0\_0
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 \end{longtable}
 
@@ -688,9 +774,9 @@ This test will check:
 \textbf{ Preconditions}:\\
 
 
-Execution status: {\bf Not Executed }
+Execution status: {\bf Pass }
 
-Final comment:\\
+Final comment:\\Test completed successfully.
 
 
 Detailed steps results:
@@ -717,11 +803,12 @@ The website is displayed.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Website is displayed.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 2 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -749,11 +836,13 @@ The documentation for the release under test is displayed.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Documentation for the release under test, v19\_0\_0, is clearly
+displayed at https://pipelines.lsst.io/v/v19\_0\_0/index.html.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 3 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -787,11 +876,23 @@ The user is satisfied that the required information is available.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+\begin{itemize}
+\tightlist
+\item
+  Release notes:
+  https://pipelines.lsst.io/v/v19\_0\_0/releases/notes.html\#release-v19-0-0
+\item
+  Installation instructions:
+  https://pipelines.lsst.io/v/v19\_0\_0/index.html\#installation
+\item
+  Getting started information:
+  https://pipelines.lsst.io/v/v19\_0\_0/index.html\#getting-started
+\end{itemize}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 4 & Description \\
  & \begin{minipage}[t]{15cm}
@@ -813,20 +914,23 @@ The user is satisfied that the report is available.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+Characterization metric report for this release is DMTR-191. It is
+clearly linked from
+https://pipelines.lsst.io/v/v19\_0\_0/metrics.html\#characterization-metric-reports.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 5 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
 Verify that the characterization metric report describes the scientific
-performance of the release in terms of metrics referring to high-level
-requirements documentation (the Science Requirements Document, LPM-17;
-the LSST System Requirements, LSE-29; and/or the Observatory System
-Specifications, LSE-30).
+performance of the release in terms of a selection of performance
+metrics drawn from high-level requirements documentation (the Science
+Requirements Document, LPM-17; the LSST System Requirements, LSE-29;
+and/or the Observatory System Specifications, LSE-30).
 
 \medskip }
 \end{minipage}
@@ -835,18 +939,21 @@ Specifications, LSE-30).
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-The user is satisfied with the contents of the report.
+Metric values describing the performance of the release, for example as
+computed by validate\_drp, are described in the report.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
+The characterization metric report has been inspected and seen to
+contain appropriate metrics.
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
 
- & Status: \textbf{ Not Executed } \\ \hline
+ & Status: \textbf{ Pass } \\ \hline
 
 \end{longtable}
 
